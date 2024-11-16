@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список фильмов</title>
+</head>
+<body>
+    <h1>Список фильмов</h1>
+    {% if films %}
+        <ul>
+            {% for film in films %}
+                <li>
+                    <h3>{{ film.title }}</h3>
+                    <p><strong>Описание:</strong> {{ film.description }}</p>
+                    <p><strong>Отзыв:</strong> {{ film.review }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Нет добавленных фильмов.</p>
+    {% endif %}
+</body>
+</html>
